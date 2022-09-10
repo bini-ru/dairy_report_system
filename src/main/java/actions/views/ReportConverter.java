@@ -67,6 +67,7 @@ public class ReportConverter {
         return evs;
     }
 
+    
 
     /*
      * Viewモデルの全フィールドの内容をDTOモデルのフィールドにコピーする
