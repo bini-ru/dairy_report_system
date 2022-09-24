@@ -26,6 +26,7 @@ public enum ForwardConst {
     CMD_EDIT("edit"),
     CMD_UPDATE("update"),
     CMD_DESTROY("destroy"),
+    CMD_GOOD("good"),
 
     //jsp
     FW_ERR_UNKNOWN("error/unknown"),
@@ -44,12 +45,15 @@ public enum ForwardConst {
      * 文字列
      */
     private final String text;
+    private final Integer count;
+
 
     /**
      * コンストラクタ
      */
     private ForwardConst(final String text) {
         this.text = text;
+        this.count = null;
     }
 
     /**
@@ -58,5 +62,10 @@ public enum ForwardConst {
     public String getValue() {
         return this.text;
     }
+
+    public Integer getIntegerValue() {
+        return this.count;
+    }
+
 
 }

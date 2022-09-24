@@ -24,7 +24,8 @@ public class ReportConverter {
                 rv.getTitle(),
                 rv.getContent(),
                 rv.getCreatedAt(),
-                rv.getUpdatedAt());
+                rv.getUpdatedAt(),
+                rv.getGood());
     }
 
 
@@ -46,7 +47,8 @@ public class ReportConverter {
                 r.getTitle(),
                 r.getContent(),
                 r.getCreatedAt(),
-                r.getUpdatedAt());
+                r.getUpdatedAt(),
+                r.getGood());
     }
 
 
@@ -67,7 +69,7 @@ public class ReportConverter {
         return evs;
     }
 
-    
+
 
     /*
      * Viewモデルの全フィールドの内容をDTOモデルのフィールドにコピーする
@@ -82,6 +84,8 @@ public class ReportConverter {
         r.setContent(rv.getContent());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
+        r.setGood(rv.getGood());
+
 
     }
 }

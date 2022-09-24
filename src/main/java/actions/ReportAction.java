@@ -128,7 +128,8 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
                     null,
-                    null);
+                    null,
+                    0);
 
 
             //日報情報登録
@@ -272,7 +273,37 @@ public class ReportAction extends ActionBase {
 
                 //一覧画面にリダイレクト
                 redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
+
             }
         }
     }
+
+            public void good() throws ServletException, IOException{
+
+                //idを条件に日報データを取得する
+                ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
+
+
+                Integer count = rv.getGood();
+
+                if(count == null) {
+                    count = 0;
+                }
+
+                count++;
+
+                rv.setGood(count);
+
+                //日報データ更新
+                List<String>  updates = service.update(rv);
+
+
+              //一覧画面にリダイレクト
+                redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
+
+            }
+
+
+
 }
+

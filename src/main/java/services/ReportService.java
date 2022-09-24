@@ -92,6 +92,7 @@ public class ReportService extends ServiceBase {
             rv.setCreatedAt(ldt);
             rv.setUpdatedAt(ldt);
             createInternal(rv);
+
         }
 
         //バリデーションで発生したエラーを返却（エラーがなければ0件の空リスト）
@@ -154,5 +155,5 @@ public class ReportService extends ServiceBase {
         em.getTransaction().commit();
 
     }
-
 }
+
